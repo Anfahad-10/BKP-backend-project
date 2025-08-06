@@ -29,7 +29,7 @@ const User = mongoose.model('User', userSchema);
 
 
 app.get('/', (req, res) => {
-  res.send('Server chal raha hai!');
+  res.send('Server is running!');
 });
 
 
