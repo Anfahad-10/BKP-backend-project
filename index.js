@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -38,7 +38,7 @@ app.post('/api/register', async (req, res) => {
   try {
     const { name, email, role } = req.body;
 
-    
+
     if (!name || !email || !role) {
       return res.status(400).json({ message: "Incomplete form. Please provide name, email, and role." });
     }
